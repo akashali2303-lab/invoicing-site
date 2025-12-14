@@ -1,5 +1,6 @@
 import { supabaseAdmin } from '../lib/supabaseServer';
 import Link from 'next/link';
+import Newsletter from '../components/Newsletter'; // Import the component
 
 export const revalidate = 3600;
 
@@ -35,14 +36,8 @@ export default async function Home() {
         ))}
       </div>
 
-      <section style={{ background: 'linear-gradient(to right, #6366f1, #06b6d4)', borderRadius: '24px', padding: '60px', marginTop: '80px', color: 'white', textAlign: 'center' }}>
-        <h2 style={{ color: 'white', marginTop: 0 }}>Join our Newsletter</h2>
-        <p style={{ color: 'rgba(255,255,255,0.9)' }}>Get monthly tips on managing your freelance business and avoiding payment delays.</p>
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', maxWidth: '400px', margin: '0 auto' }}>
-          <input type="email" placeholder="Enter your email" style={{ padding: '12px', borderRadius: '12px', border: 'none', flex: 1 }} />
-          <button style={{ background: '#000', color: '#fff', border: 'none', padding: '12px 24px', borderRadius: '12px', fontWeight: 'bold' }}>Subscribe</button>
-        </div>
-      </section>
+      {/* The Newsletter Component */}
+      <Newsletter />
     </div>
   );
 }
